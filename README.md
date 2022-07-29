@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# React IronBnB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+LAB/Exercise to practice React concepts (React Router, props, state, useEffect, API requests...)
 
-In the project directory, you can run:
 
-### `npm start`
+## Our Goal
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+We're going to create a React application that interacts with an external API. 
+It will have functionality to get information about apartments & create new apartments.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Sitemap/Wireframes:
+- We will follow these wireframes: [https://whimsical.com/react-ironbnb-MVw1gkTJrekF2QTaEKCMJU](https://whimsical.com/react-ironbnb-MVw1gkTJrekF2QTaEKCMJU)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<!-- 
+- Demo: [https://react-ironbnb.netlify.app/](https://react-ironbnb.netlify.app/) 
+- @todo: implement "more details"
+-->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Ironbnb API
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- We will interact with Ironbnb API.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- BaseURL: [https://ironbnb-m3.herokuapp.com](https://ironbnb-m3.herokuapp.com)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Supported endpoints:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| HTTP verb | URL               | Request body                                                 | Action                                             |
+| --------- | ----------------- | :----------------------------------------------------------- | :------------------------------------------------- |
+| `GET`     | `/apartments`     | - - -                                                        | Returns an array with all the apartment documents. |
+| `GET`     | `/apartments/:id` | - - -                                                        | Returns an apartment document by its id.           |
+| `POST`    | `/apartments`     | { <br />  img: String, <br />  title: String,<br />  pricePerDay: Number <br />} | Creates a new apartment document.                  |
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- As you can see, the it follows REST.
+- Responses are in JSON.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Step 0: initial setup
+- Fork + clone
+- Install dependencies
+- Run the app (hint: check package.json)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Step 1: General structure and routing
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Create the components & setup routing.
+- A `<NavBar />` component should be displayed in all pages
+- If user visits `/`, display a `<HomePage />` component
+- If user visits `/apartments`, display `<ApartmentsList />`
+- If user visits `/apartments/42`, display `<ApartmentDetails />` (note, that `42` must be dynamic -- use URL params)
+- If user visits `/apartments/create`, display `<CreateApartment />` (note: in the code, you may need this route earlie... otherwise "create" will be treated as an apartment id)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br />
 
-### `npm run build` fails to minify
+IMPORTANT: for this step, just display an `<h1>` in each component (ie. in this step, you don't need to implement the details of each component, just the general structure).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br />
+
+For the components hierarchy, use the following:
+
+- App
+  - NavBar
+  - HomePage
+  - ApartmentsList
+  - ApartmentDetails
+  - CreateApartment 
+  
+
+
+
+
+
+## Step 2: ApartmentsList
+
+Implement `<ApartmentsList />`, so that it makes a request to the API and displays a list with all apartments.
+
+Hint: you will need to use `useEffect()`.
+
+For now, don't worry about the button "more details" (we will implement this functionality later).
+
+
+
+
+## Step 3: Create new Apartment
+
+Implement the logic for `<CreateApartment />`.
+- You will need a form (controlled component).
+- When user submits, we need to send a POST request to the API.
+- Once we get the response from the API, we can redirect the user to the list of apartments
+  - do some research on how to redirect with react-router (hint: the library provides a function `navigate()`)
+
+
+
+## Step 4: ApartmentDetails
+
+Implement the logic for `<ApartmentDetails />`.
+This component should be able to display the details of an apartment, based on its id.
+
+
+
+## Bonus
+
+- [ ] Store API baseUrl in .env
+- [ ] Single API call to get the info (instead of calling the API in `<ApartmentsList>` and `<ApartmentDetails>`)
+  - Make one single call to the API in `<App>`
+  - Pass the info as props to `<ApartmentsList>` and `<ApartmentDetails>`
+- [ ] Conditional rendering: if an apartment has no image, display a default image
+- [ ] Conditional rendering: if data from the API is not ready, display a message "loading"
+- [ ] Display spinner/loader while data is loading
+- [ ] Apply different ways to style React components (inline css, plain css with one file per component, scss...)
+- [ ] (advanced) create a service (a function or class in charge of all requests to the api)
+- [ ] (advanced) Convert all function components to class components (note: the syntax to use props, state and api requests is a bit different in class components; do some research)
