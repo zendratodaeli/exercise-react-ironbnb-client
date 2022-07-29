@@ -44,44 +44,45 @@ Sitemap/Wireframes:
 
 
 
-## Step 0: initial setup
+## Iteration 0: initial setup
 - Fork + clone
 - Install dependencies
 - Run the app (hint: check package.json)
 
 
-## Step 1: General structure and routing
+## Iteration 1: General structure and routing
 
 
-Create the components & setup routing.
-- A `<NavBar />` component should be displayed in all pages
-- If user visits `/`, display a `<HomePage />` component
+Create the following components (for now, just display an `<h1>` in each component):
+
+- NavBar
+- HomePage
+- ApartmentsList
+- ApartmentDetails
+- CreateApartment
+
+<br />
+
+Setup routing. You will need this behaviour:
+- The `<NavBar />` component should be displayed in all pages
+- If user visits `/`, display the `<HomePage />` component
 - If user visits `/apartments`, display `<ApartmentsList />`
 - If user visits `/apartments/42`, display `<ApartmentDetails />` (note, that `42` must be dynamic -- use URL params)
 - If user visits `/apartments/create`, display `<CreateApartment />` (note: in the code, you may need this route earlie... otherwise "create" will be treated as an apartment id)
 
+<br />
+
+Implement the NavBar with links, so that the user can navigate (hint `<NavLink>`).
 
 <br />
 
-IMPORTANT: for this step, just display an `<h1>` in each component (ie. in this step, you don't need to implement the details of each component, just the general structure).
-
-<br />
-
-For the components hierarchy, use the following:
-
-- App
-  - NavBar
-  - HomePage
-  - ApartmentsList
-  - ApartmentDetails
-  - CreateApartment 
-  
+IMPORTANT: 
+- For this step, you don't need to implement the details of each component, just the general structure (make sure the user can navigate through the app).
+- For the components hierarchy, keep all components as direct children of App.
 
 
 
-
-
-## Step 2: ApartmentsList
+## Iteration 2: ApartmentsList
 
 Implement `<ApartmentsList />`, so that it makes a request to the API and displays a list with all apartments.
 
@@ -92,17 +93,17 @@ For now, don't worry about the button "more details" (we will implement this fun
 
 
 
-## Step 3: Create new Apartment
+## Iteration 3: Create new Apartment
 
 Implement the logic for `<CreateApartment />`.
 - You will need a form (controlled component).
 - When user submits, we need to send a POST request to the API.
 - Once we get the response from the API, we can redirect the user to the list of apartments
-  - do some research on how to redirect with react-router (hint: the library provides a function `navigate()`)
+  - do some research on how to redirect with react-router (hint: the library provides a custom hook `useNavigate()`)
 
 
 
-## Step 4: ApartmentDetails
+## Iteration 4: ApartmentDetails
 
 Implement the logic for `<ApartmentDetails />`.
 This component should be able to display the details of an apartment, based on its id.
