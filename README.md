@@ -111,7 +111,7 @@ This component should be able to display the details of an apartment, based on i
 
 ## Bonus
 
-- [ ] Store API baseUrl in .env
+- [ ] Store API baseUrl in .env (since we're using Create React App, make sure your environment variable starts with the prefix `REACT_APP_`)
 - [ ] Single API call to get the info (instead of calling the API in `<ApartmentsList>` and `<ApartmentDetails>`)
   - Make one single call to the API in `<App>`
   - Pass the info as props to `<ApartmentsList>` and `<ApartmentDetails>`
