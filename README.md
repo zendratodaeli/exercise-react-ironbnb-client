@@ -120,6 +120,6 @@ This component should be able to display the details of an apartment, based on i
 - [ ] Conditional rendering: if data from the API is not ready, display a message "loading"
 - [ ] Display spinner/loader while data is loading
 - [ ] CSS: Apply different ways to style React components (inline css, plain css with one file per component, scss...).
-. [ ] CSS: use a component library (ex. React Bootstrap, Semantic UI, Ant Design, Chakra, Material UI...)
+- [ ] CSS: use a component library (ex. React Bootstrap, Semantic UI, Ant Design, Chakra, Material UI...)
 - [ ] (advanced) create a service (a function or class in charge of all requests to the api)
 - [ ] (advanced) Convert all function components to class components (note: the syntax to use props, state and api requests is a bit different in class components; do some research)
