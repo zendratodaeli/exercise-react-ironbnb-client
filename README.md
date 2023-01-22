@@ -120,7 +120,7 @@ This component should make a call to the API and display the details of an apart
 - [ ] Conditional rendering: if data from the API is not ready, display a message "loading"
 
 
-## Bonus Ideas II (if needed, do some research and/or ask your LT/TAs)
+## Bonus Ideas II (those are a bit more advanced; if needed, do some research and/or ask your LT/TAs)
 
 - [ ] Display spinner/loader while data is loading
   - Option 1: there's many websites where you can find CSS for "spinners", for example [here](https://projects.lukehaas.me/css-loaders/). You can copy the CSS and then render a div with that specific className.
