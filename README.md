@@ -77,7 +77,7 @@ Implement the NavBar with links, so that the user can navigate (hint `<NavLink>`
 <br />
 
 IMPORTANT: 
-- For this step, you don't need to implement the details of each component, just the general structure (make sure the user can navigate through the app).
+- For this iteration, do not implement the details of each component, just the general structure (make sure the user can navigate through the app).
 - For the components hierarchy, keep all components as direct children of App.
 
 
@@ -106,7 +106,7 @@ Implement the logic for `<CreateApartment />`.
 ## Iteration 4: ApartmentDetails
 
 Implement the logic for `<ApartmentDetails />`.
-This component should be able to display the details of an apartment, based on its id.
+This component should make a call to the API and display the details of an apartment, based on its id.
 
 
 
@@ -118,7 +118,13 @@ This component should be able to display the details of an apartment, based on i
   - Pass the info as props to `<ApartmentsList>` and `<ApartmentDetails>`
 - [ ] Conditional rendering: if an apartment has no image, display a default image
 - [ ] Conditional rendering: if data from the API is not ready, display a message "loading"
+
+
+## Further Bonus (if needed, do some research and/or ask your LT/TAs)
+
 - [ ] Display spinner/loader while data is loading
+  - Option 1: there's many websites where you can find CSS for "spinners", for example [here](https://projects.lukehaas.me/css-loaders/). You can copy the CSS and then render a div with that specific className.
+  - Option 2: render a component from a component library. For example, if you're using Ant Design, you can use [this component](https://ant.design/components/spin)
 - [ ] CSS: Apply different ways to style React components (inline css, plain css with one file per component, scss...).
 - [ ] CSS: use a component library (ex. React Bootstrap, Semantic UI, Ant Design, Chakra, Material UI...)
 - [ ] (advanced) create a service (a function or class in charge of all requests to the api)
