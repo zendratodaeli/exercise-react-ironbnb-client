@@ -110,7 +110,7 @@ This component should make a call to the API and display the details of an apart
 
 
 
-## Bonus
+## Bonus Ideas I
 
 - [ ] Store API baseUrl in .env (since we're using Create React App, make sure your environment variable starts with the prefix `REACT_APP_`)
 - [ ] Single API call to get the info (instead of calling the API in `<ApartmentsList>` and `<ApartmentDetails>`)
@@ -120,7 +120,7 @@ This component should make a call to the API and display the details of an apart
 - [ ] Conditional rendering: if data from the API is not ready, display a message "loading"
 
 
-## Further Bonus (if needed, do some research and/or ask your LT/TAs)
+## Bonus Ideas II (if needed, do some research and/or ask your LT/TAs)
 
 - [ ] Display spinner/loader while data is loading
   - Option 1: there's many websites where you can find CSS for "spinners", for example [here](https://projects.lukehaas.me/css-loaders/). You can copy the CSS and then render a div with that specific className.
