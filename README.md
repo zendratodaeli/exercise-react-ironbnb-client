@@ -37,7 +37,7 @@ Sitemap/Wireframes:
 | `POST`    | `/apartments`     | { <br />  img: String, <br />  title: String,<br />  pricePerDay: Number <br />} | Creates a new apartment document.                  |
 
 
-- As you can see, the it follows REST.
+- As you can see, it follows REST.
 - Responses are in JSON.
 
 
@@ -128,4 +128,4 @@ This component should make a call to the API and display the details of an apart
 - [ ] CSS: Apply different ways to style React components (inline css, plain css with one file per component, scss...).
 - [ ] CSS: use a component library (ex. React Bootstrap, Semantic UI, Ant Design, Chakra, Material UI...)
 - [ ] (advanced) create a service (a function or class in charge of all requests to the api)
-- [ ] (advanced) Convert all function components to class components (note: the syntax to use props, state and api requests is a bit different in class components; do some research)
+
