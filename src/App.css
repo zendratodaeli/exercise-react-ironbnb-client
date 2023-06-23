@@ -1,3 +1,15 @@
 .App {
   text-align: center;
 }
+
+.nav-bar {
+  margin: 2rem;
+  padding: 5px;
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+
+a {
+  text-decoration: none;
+}
